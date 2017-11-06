@@ -1,0 +1,58 @@
+<!-- {{set . "title" "Home"}} -->
+{{template "header.html" .}}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Branding Image -->
+    <div class="navbar-brand">
+        <a href="/">
+            <img src="/public/img/social-prayer-logo.png" style="height: 30px;" />
+            SocialPrayer
+        </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+<!--                 <ul class="nav navbar-nav">
+                &nbsp;
+            </ul> -->
+
+            <!-- Right Side Of Navbar -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Authentication Links -->
+                {{if not .loggedIn}}
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Join Now</a></li>
+                {{else}}
+                    <li><a>{{.user.Name}}</a></li>
+                    <li><a href="/auth/logout">logout</a></li>
+                {{end}}
+            </ul>
+    </div>
+</nav>
+
+
+<!-- <header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+      <h1>{{.greeting}}</h1>
+      <p></p>
+    </div>
+  </div>
+</header> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="span6">
+      {{template "flash.html" .}}
+      <form action="/App/Hello" method="GET">
+        <input type="text" name="myName" /><br/>
+        <input type="submit" value="Say hello!" />
+    </form>
+    </div>
+  </div>
+</div> -->
+
+
