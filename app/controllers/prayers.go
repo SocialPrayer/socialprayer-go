@@ -13,7 +13,7 @@ type Prayers struct {
 
 func (c Prayers) checkUser() revel.Result {
 	if user := c.connected(); user == nil {
-		c.Flash.Error("Please log in first")
+		c.Flash.Error("Please log in first.")
 		return c.Redirect(routes.App.Hello())
 	}
 	return nil
